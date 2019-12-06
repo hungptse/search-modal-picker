@@ -24,7 +24,7 @@ export default class RNModalPicker extends PureComponent {
     };
   }
 
-   _setDefaultValue(
+  _setDefaultValue(
     defaultText,
     pickerStyle,
     textStyle,
@@ -43,7 +43,7 @@ export default class RNModalPicker extends PureComponent {
     );
   }
 
-   _setSelectedValue(
+  _setSelectedValue(
     defaultText,
     pickerStyle,
     textStyle,
@@ -69,14 +69,28 @@ export default class RNModalPicker extends PureComponent {
   _searchFilterFunction(searchText, data) {
     let newData = [];
     if (searchText) {
-      newData = data.filter(function(item) {
+      // if (data.indexOf(searchText) == -1) {
+      //   const newObj = [{ id: 11, name: searchText }]
+      //   this.setState({
+      //     dataSource: [...newObj]
+      //   });
+      // }
+
+      newData = data.filter(function (item) {
         const itemData = item.name.toUpperCase();
         const textData = searchText.toUpperCase();
         return itemData.startsWith(textData);
       });
-      this.setState({
-        dataSource: [...newData]
-      });
+      if (newData.length == 0) {
+        const newObj = [{ id: 999, name: searchText }]
+        this.setState({
+          dataSource: [...newObj]
+        });
+      } else {
+        this.setState({
+          dataSource: [...newData]
+        });
+      }
     } else {
       this.setState({ dataSource: this.props.dataSource });
     }
@@ -97,9 +111,9 @@ export default class RNModalPicker extends PureComponent {
   }
 
   _setSelectedIndex(index, item) {
-      this.props.selectedValue(index,item);
+    this.props.selectedValue(index, item);
 
-      this.setState({ selectedFlag: true ,modalVisible: false});
+    this.setState({ selectedFlag: true, modalVisible: false });
   }
 
   render() {
@@ -124,32 +138,32 @@ export default class RNModalPicker extends PureComponent {
             </TouchableOpacity>
           </View>
         ) : (
-          <View>
-            <TouchableOpacity
-              disabled={this.props.disablePicker}
-              style={styles.picker}
-              onPress={() => this.setState({ modalVisible: true })}
-              activeOpacity={0.7}
-            >
-              <View>
-                {this._setDefaultValue(
-                  this.props.placeHolderLabel,
-                  this.props.pickerStyle,
-                  this.props.placeHolderTextStyle,
-                  this.props.dropDownImageStyle,
-                  this.props.dropDownImage
-                )}
-              </View>
-            </TouchableOpacity>
-          </View>
-        )}
+            <View>
+              <TouchableOpacity
+                disabled={this.props.disablePicker}
+                style={styles.picker}
+                onPress={() => this.setState({ modalVisible: true })}
+                activeOpacity={0.7}
+              >
+                <View>
+                  {this._setDefaultValue(
+                    this.props.placeHolderLabel,
+                    this.props.pickerStyle,
+                    this.props.placeHolderTextStyle,
+                    this.props.dropDownImageStyle,
+                    this.props.dropDownImage
+                  )}
+                </View>
+              </TouchableOpacity>
+            </View>
+          )}
 
         <Modal
           visible={this.state.modalVisible}
           transparent={true}
-          onShow={()=>this.setState({dataSource:this.props.dataSource})}
+          onShow={() => this.setState({ dataSource: this.props.dataSource })}
           animationType={this.props.changeAnimation}
-          onRequestClose={() => this.setState({ modalVisible: false})}
+          onRequestClose={() => this.setState({ modalVisible: false })}
         >
           <View style={styles.container}>
             <View style={styles.listDataContainerStyle}>
@@ -184,7 +198,7 @@ export default class RNModalPicker extends PureComponent {
                     onChangeText={text =>
                       this._searchFilterFunction(
                         text,
-                        this.props.dummyDataSource
+                        this.props.dataSource
                       )
                     }
                     placeholder={this.props.searchBarPlaceHolder}
@@ -310,7 +324,7 @@ RNModalPicker.propTypes = {
   disablePicker: PropTypes.bool,
   changeAnimation: PropTypes.string,
   searchBarPlaceHolder: PropTypes.string,
-  pickerItemTextStyle:PropTypes.oneOfType([
+  pickerItemTextStyle: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.object,
     PropTypes.array
@@ -434,7 +448,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
 
- 
+
   listRowClickTouchStyle: {
     justifyContent: "center",
     flexDirection: "row",
