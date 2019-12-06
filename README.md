@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/react-native-firebase"><img src="https://img.shields.io/badge/npm-v0.2.4-blue?style=flat-square" alt="NPM Version"></a>
-  <a href="https://www.npmjs.com/package/react-native-firebase"><img src="https://img.shields.io/badge/downloads-100%2Fweek-brightgreen?style=flat-square" alt="NPM downloads"></a>
+  <a href="https://www.npmjs.com/package/search-modal-picker"><img src="https://img.shields.io/badge/npm-v0.2.4-blue?style=flat-square" alt="NPM Version"></a>
+  <a href="https://www.npmjs.com/package/search-modal-picker"><img src="https://img.shields.io/badge/downloads-100%2Fweek-brightgreen?style=flat-square" alt="NPM downloads"></a>
   <a href="/LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="License"></a>
 </p>
 
@@ -32,16 +32,16 @@
 7. Add choose custom text from search bar (New feature)
 ## Installation
 
-> **npm i rn-modal-picker**
+> **npm i search-modal-picker**
 
-> **yarn add rn-modal-picker**
+> **yarn add search-modal-picker**
 
 ## Usage
 
 ```
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import RNPicker from "rn-modal-picker";
+import RNPicker from "search-modal-picker";
 
 export default class App extends Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 {
-  "name": "rn-modal-picker",
-  "version": "0.2.6",
+  "name": "search-modal-picker",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -29,7 +29,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vishaldhanotiya/react-native-modal-picker.git"
+    "url": "https://github.com/hungptse/search-modal-picker"
   },
   "keywords": [
     "react-native",
@@ -38,13 +38,13 @@
     "dropdown",
     "modal-selector",
     "modal-dropdown",
-    "rn-modal-picker",
+    "search-modal-picker",
     "rn-picker-dialog"
   ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vishaldhanotiya/react-native-modal-picker/issues"
+    "url": "https://github.com/hungptse/search-modal-picker/issues"
   },
-  "homepage": "https://github.com/vishaldhanotiya/react-native-modal-picker#readme"
+  "homepage": "https://github.com/hungptse/search-modal-picker#readme"
 }
