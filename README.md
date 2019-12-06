@@ -29,16 +29,12 @@
 4. Dynamically change dropdown image
 5. Customize font size, font color and style 
 6. Change animation(Slide, fade, none)
-
+7. Add choose custom text from search bar (New feature)
 ## Installation
-
-#### Step 1 Install
 
 > **npm i rn-modal-picker**
 
-#### Step 2 Link
-
-> **react-native link rn-modal-picker**
+> **yarn add rn-modal-picker**
 
 ## Usage
 
