@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">React Native Modal Picker</h1>
+  <h1 align="center">React Native Modal Picker (SearchBar)</h1>
 </p>
 
 <p align="center">
